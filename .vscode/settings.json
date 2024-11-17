@@ -58,6 +58,15 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "typeinfo": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "ios": "cpp",
+    "iostream": "cpp",
+    "queue": "cpp",
+    "__split_buffer": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "unordered_map": "cpp"
   }
 }
