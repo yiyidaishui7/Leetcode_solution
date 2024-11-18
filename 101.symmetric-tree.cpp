@@ -78,19 +78,41 @@ using namespace std;
 class Solution
 {
 public:
+    // 做错了！！！
+    //  bool isSymmetric(TreeNode *root)
+    //  {
+    //      if ((!root->left && !root->right)) // 根没有孩子
+    //          return true;
+
+    //     else if ((root->left && root->right) && (root->left->val == root->right->val) && (isSymmetric(root->left) && isSymmetric(root->right)))
+    //         // 两个孩子，value相同，而且两个孩子均符合isSymmetric
+    //         return true;
+
+    //     else
+    //         // 根只有一个孩子
+    //         // 根有两个孩子，但value不相同
+    //         return false;
+    // }
+    //
+    bool compare(TreeNode *l, TreeNode *r)
+    {
+        if (l == nullptr && r == nullptr)
+            return true;
+        if (l != nullptr && r == nullptr)
+            return false;
+        if (l == nullptr && r != nullptr)
+            return false;
+        // lr的val相同；l左=r右 都存在 都不存在；l右=r左 都存在 都不存在
+        if (l->val == r->val && (compare(l->left, r->right)) && (compare(l->right, r->left)))
+            return true;
+        else
+            return false;
+    }
     bool isSymmetric(TreeNode *root)
     {
-        if ((!root->left && !root->right)) // 根没有孩子
+        if (root == nullptr)
             return true;
-
-        else if ((root->left && root->right) && (root->left->val == root->right->val) && (isSymmetric(root->left) && isSymmetric(root->right)))
-            // 两个孩子，value相同，而且两个孩子均符合isSymmetric
-            return true;
-
-        else
-            // 根只有一个孩子
-            // 根有两个孩子，但value不相同
-            return false;
+        return compare(root->left, root->right);
     }
 };
 // @lc code=end
