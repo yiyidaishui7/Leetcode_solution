@@ -72,7 +72,11 @@ public:
     {
         if (num == 1)
             return true;
+<<<<<<< HEAD
         long l = 1, r = num / 2, mid = l + (r - l) / 2; // mid*mid的结果可能会溢出int
+=======
+        long l = 1, r = num / 2, mid = l + (r - l) / 2; // mid*mid的结果可能会溢出
+>>>>>>> ab85fe06481760823c4a533c8b31d47c2fc2fb30
         while (l <= r)
         {
             if (mid * mid == num)
